@@ -1,0 +1,188 @@
+#ACAI uncertainty variables for advanced approach
+#High lens
+#Do not change units -- model is set up to work with units specified below
+
+#CLIMATE VARIABLES
+lambda_Contrail:
+  distribution: Constant
+  value: 0.59
+  units: NA
+
+RF2xCO2:
+  distribution: Triangular
+  min: 3.46
+  top: 3.93
+  max: 4.40
+  units: W/m^2
+
+spec_heat:
+  distribution: Constant
+  value: 252300000
+  units: J/K-m^2
+
+advect:
+  distribution: Constant
+  value: 0.000062
+  units: kg/m^2-s
+
+C2_in:
+  distribution: Constant
+  value: 6300000000
+  units: J/K-m^2
+
+z_in: 
+  distribution: Constant
+  value: 2000
+  units: m
+
+diffuse:
+  distribution: Constant
+  value: 0.000044
+  units: m^2/s
+
+RF_mod_unc:
+  distribution: Uniform
+  a: 0.9
+  b: 1.1
+  units: fraction
+
+mass_to_conc_model_unc:
+  distribution: Constant
+  value: 0.1028
+  units: fraction
+
+clim_sen:
+  distribution: Constant
+  value: 7.12
+
+SARF_adjust:
+  distribution: Constant
+  value: 0.0525
+  units: percentage
+
+contrail_SATL_RF:
+  distribution:  Constant
+  value: 9.04e-13
+  units: W/m2/km
+
+contrail_CPAC_RF:
+  distribution: Constant
+  value: 1.17e-12
+  units: W/m2/km
+
+contrail_CONUS_RF:
+  distribution: Constant
+  value: 3.06e-12
+  units: W/m2/km
+
+contrail_MEAST_RF:
+  distribution: Constant
+  value: 3.25e-12
+  units: W/m2/km
+
+contrail_NATL_RF:
+  distribution: Constant
+  value: 3.48e-12
+  units: W/m2/km
+
+contrail_NPAC_RF:
+  distribution: Constant
+  value: 2.32e-12
+  units: W/m2/km
+
+contrail_NAM_RF:
+  distribution: Constant
+  value: 3.65e-12
+  units: W/m2/km
+
+contrail_global_RF:
+  distribution: Constant
+  value: 1.35e-12
+  units: W/m2/km
+
+contrail_RUS_RF:
+  distribution: Constant
+  value: 4.39e-12
+  units: W/m2/km
+
+contrail_SEAS_RF:
+  distribution: Constant
+  value: 1.81e-12
+  units: W/m2/km
+
+contrail_WEU_RF:
+  distribution: Constant
+  value: 5.31e-12
+  units: W/m2/km
+
+contrail_RF_unc:
+  distribution: Constant
+  value: 1.7
+  units: fraction
+
+a19:
+  distribution: Constant
+  value: 0
+  units: GDP/DT 
+
+a29:
+  distribution: Constant
+  value: 0.011344
+  units: GDP/DT^2
+
+a39:
+  distribution: Constant
+  value: 2
+  units: exponent
+
+
+#AIR QUALITY VARIABLES
+VSL_US_1990:
+  distribution: Constant
+  value: 11
+  units: 1990-USD (millions)
+
+income_elasticity:
+  distribution: Constant
+  value: 1.4
+  units: NA
+
+β_cardio: #Hoek et al (PM2.5)
+  distribution: Constant
+  value: 1.61438e-2
+  units: NA
+
+β_resp: #Turner et al (O3)
+  distribution: Constant
+  value: 1.4842e-2
+  units: NA
+
+β_AC: #Turner et al (O3)
+  distribution: Constant
+  value: 3.92207e-3
+  units: NA
+
+θ_IHD: #Burnett et al
+  distribution: Constant
+  value: 0.3263
+  units: NA
+
+θ_stroke:
+  distribution: Constant
+  value: 0.3986
+  units: NA
+
+θ_COPD:
+  distribution: Constant
+  value: 0.3622
+  units: NA
+
+θ_LC:
+  distribution: Constant
+  value: 0.3968
+  units: NA
+
+θ_LRI:
+  distribution: Constant
+  value: 0.6398
+  units: NA

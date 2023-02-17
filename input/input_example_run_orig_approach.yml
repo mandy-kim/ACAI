@@ -1,0 +1,29 @@
+#INPUTS
+filename: "example_run_orig_approach"   #folder name where outputs will be saved
+approach: "original"   #"advanced" for ACAI, "original" for APMT-IC
+scenario: "SSP2-4.5"   #policy scenario: "SSP1-1.9", "SSP1-2.6", "SSP2-4.5", "SSP3-7.0", "SSP4-3.4", "SSP4-6.0", "SSP5-3.4", or "SSP5-8.5"
+nrun: 10000            #number of MC simulations
+timehorizon: 800       #time horizon in years
+tmoney: 2020           #cost results calculated in year USD-tmoney, cannot be > 2020 (for now, data saved in ../data/GDP_data/GDP_deflator.jld2)
+DR: 0.03               #discount rate (usually 0.02, 0.03, 0.05, or 0.07)
+config_file: "config_files/original/mid.yml" #YAML file containing distributions of uncertain parameters
+
+#emission info
+years: [2035]                     #array of emission years
+kg_FB: [4.2404067e11]             #total fuel burn (kg) in each year corresponding to years array
+kg_CO2: [1.335728e12]             #total CO2 (kg) in each year corresponding to years array
+kg_NOx: [6.439453e9]              #total NOx (kg) in each year corresponding to years array
+
+#lifecycle info
+lc_analysis: 0                 #1: true (include lifecycle analysis), 0: false
+lc_kg_CO2: [0]                  #units in kg, same size as years above
+lc_kg_CH4: [0]                  
+lc_kg_N2O: [0]                  
+lc_frac_CH4_ff: [0]
+
+#fuel type
+#1: Conventional, 2: ULS, 3: Pyrol Jet, 4: Pyrol ULS, 
+#5: NGFT, 6: FGFT, 7: LandfillFT, 8. BioFT,
+#9: CoalFT, 10: CoalBioFT, 11: Soy, 12: Palm, 
+#13: Rapeseed, 14: Jatropha, 15: Camelina, 16: Algae
+fueltype: 1

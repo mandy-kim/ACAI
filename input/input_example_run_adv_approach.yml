@@ -1,0 +1,30 @@
+#INPUTS
+filename: "example_run_adv_approach"   #folder name where outputs will be saved
+approach: "advanced"   #"advanced" or "original"
+scenario: "SSP2-4.5"   #policy scenario: "SSP1-1.9", "SSP1-2.6", "SSP2-4.5", "SSP3-7.0", "SSP4-3.4", "SSP4-6.0", "SSP5-3.4", or "SSP5-8.5"
+nrun: 10000            #number of MC simulations
+timehorizon: 800       #time horizon in years
+tmoney: 2020           #cost results calculated in year USD-tmoney, cannot be > 2020 (for now, data saved in ../data/GDP_data/GDP_deflator.jld2)
+DR: 0.03               #discount rate (usually 0.02, 0.03, 0.05, or 0.07)
+config_file: "config_files/advanced/mid.yml" #YAML file containing distributions of uncertain parameters
+
+#emission info
+emissionname: "subsonic_2035"     #folder name where aggregated emissions will be saved (output/emissions/emissionname/)
+emissionfolders: ["/net/d13/data/fritzt/NASA/AEIC-GriddedData/netCDF/Baseline_2035/"] #array of folder locations for emissions each year
+years: [2035]                                 #array of years corresponding to folder emissions, must be same size as emissionfolders array
+frequency: "monthly"                          #"daily", "monthly", or "yearly" - if emissionfolders contains multiple years, must be all the same frequency
+layers: 72                                    #47 or 72 vertical layer GEOS-chem grid
+weights: "regrid_files/esmf_regrid_weights_1x1_to_2x25.nc" #ESMF regridding weights from input emissions to 2x2.5deg (see https://github.com/LiamBindle/sparselt/tree/master/examples/sample_data)
+
+#sensitivity info for non-CO2, non-contrail species
+sensitivityfolders: ["data/sensitivities/NOx"] #sensitivityfolders[1] = location of NOx sensivities; to add other emission sensitivities in future
+sensitivitycases: 46               #number of sensitivity regions (e.g., 6 from non-cruise and 40 from cruise altitudes)
+sensitivityRFyears: 28             #length of time t (years) in sensitivities for RF (should be the same for all species)
+sensitivityAQyears: 1              #length of time t (years) in sensitivities for PM2.5 or Sfc O3 (should be the same for all species)
+sensitivityO3years: 1              #length of time t (years) in sensitivities for column O3 (should be the same for all species)
+
+#other AQ-related inputs
+VSLtype: "global average"       #"country specific", "US", or "global average"
+PM25_CRF: "GEMM"                #"GEMM" (Burnett et al. 2018 CRF) or "LL" (log-linear, using Hoek et al. 2013 CRF)
+O3_risk: "respiratory"          #"respiratory" or "all-cause" (values from Turner et al 2015)
+cessationlag: 0                 #1: true (include cessation lag), 0: false (do not include cessation lag)

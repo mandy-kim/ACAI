@@ -1,0 +1,337 @@
+#ACAI uncertainty variables for original approach
+#Mid lens
+#Do not change units -- model is set up to work with units specified below
+
+#Uncertainty to aviation emissions values
+emis_unc_FB:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+emis_unc_NOx:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+#Estimated baseline emissions from which RFs are scaled
+avNOx2006:
+  distribution: Constant
+  value: 2.67e9
+  units: kg
+
+avfuel2005:
+  distribution: Constant
+  value: 188.1e9
+  units: kg
+
+#RF multipliers for short-lived forcers
+lambda_O3:
+  distribution: Constant
+  value: 1
+  units: NA
+
+lambda_Contrail:
+  distribution: Constant
+  value: 0.59
+  units: NA
+
+lambda_Sulfates:
+  distribution: Constant
+  value: 1
+  units: NA
+
+lambda_Soot:
+  distribution: Constant
+  value: 1
+  units: NA
+
+lambda_H2O:
+  distribution: Constant
+  value: 1
+  units: NA
+
+lambda_CH4:
+  distribution: Constant
+  value: 1
+  units: NA
+
+lambda_Nitrate:
+  distribution: Constant
+  value: 1
+  units: NA
+
+#RF CO2 uncertainties
+RF_mod_unc:
+  distribution: Uniform
+  a: 0.9
+  b: 1.1
+  units: fraction
+
+mass_to_conc_model_unc:
+  distribution: Constant
+  value: 0.1028
+  units: fraction
+
+SARF_adjust:
+  distribution: Constant
+  value: 0.0525
+  units: percentage
+
+#RF factor/variables
+NOx_Effect:
+  distribution: Constant
+  value: 2
+  units: NA
+
+RF_Nitrate:
+  distribution: Constant
+  value: -0.003
+  units: W/m^2
+
+RF_Contrail:
+  distribution: Constant
+  value: 0.11233
+  units: W/m^2
+
+RF_Sulfates:
+  distribution: Constant
+  value: -0.003
+  units: W/m^2
+
+RF_Soot:
+  distribution: Constant
+  value: 0.001
+  units: W/m^2
+
+RF_H2O:
+  distribution: Constant
+  value: 0.002
+  units: W/m^2
+
+#Temperature model variables
+RF2xCO2:
+  distribution: Triangular
+  min: 3.46
+  top: 3.93
+  max: 4.40
+  units: W/m^2
+
+clim_sen:
+  distribution: Constant
+  value: 7.12
+
+#Ocean parameters
+spec_heat:
+  distribution: Constant
+  value: 252300000
+  units: J/K-m^2
+
+advect:
+  distribution: Constant
+  value: 0.000062
+  units: kg/m^2-s
+
+C2_in:
+  distribution: Constant
+  value: 6300000000
+  units: J/K-m^2
+
+z_in: 
+  distribution: Constant
+  value: 2000
+  units: m
+
+diffuse:
+  distribution: Constant
+  value: 0.000044
+  units: m^2/s
+
+#Global damage function coefficients
+a19:
+  distribution: Constant
+  value: 0
+  units: GDP/DT 
+
+a29:
+  distribution: Constant
+  value: 0.011344
+  units: GDP/DT^2
+
+a39:
+  distribution: Constant
+  value: 2
+  units: exponent
+
+#US damage function coefficients
+a19_US:
+  distribution: Constant
+  value: 0.00283
+  units: GDP/DT
+
+a29_US:
+  distribution: Constant
+  value: 0.00146
+  units: GDP/DT^2
+
+aUS_unc_fact:
+  distribution: Constant
+  value: 0.2064
+  units: NA
+
+aUS_unc_add:
+  distribution: Constant
+  value: 0.004512
+  units: NA
+
+aUS_tempAdjust:
+  distribution: Constant
+  value: 0.58
+  units: Deg C
+
+aUS_distrib:
+  distribution: Constant
+  value: 1.645
+  units: NA
+
+#Lifecycle analysis variables
+emis_unc_lc_CO2:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+emis_unc_lc_CH4:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+emis_unc_lc_N2O:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+emis_unc_lc_ff_frac:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+co2init:
+  distribution: Normal
+  mu: 278
+  sigma: 1.216
+  lower_bound: 0
+  upper_bound: Inf
+  units: ppm
+
+ch4init:
+  distribution: Normal
+  mu: 722
+  sigma: 15.2
+  lower_bound: 0
+  upper_bound: Inf
+  units: ppb
+
+n2oinit:
+  distribution: Normal
+  mu: 270
+  sigma: 4.255
+  lower_bound: 0
+  upper_bound: Inf
+  units: ppb
+
+RF_mod_unc_CO2:
+  distribution: Constant
+  value: 1.1
+  units: fraction
+
+RF_mod_unc_CH4:
+  distribution: Constant
+  value: 1.14
+  units: fraction
+
+RF_mod_unc_N2O:
+  distribution: Constant
+  value: 1.1
+  units: fraction
+
+RF_mod_unc_CH4tropO3:
+  distribution: Constant
+  value: 1.6
+  units: fraction
+
+RF_mod_unc_CH4stratH2O:
+  distribution: Constant
+  value: 1.7143
+  units: fraction
+
+RF_mod_unc_CH4ffCO2:
+  distribution: Constant
+  value: 1.5
+  units: fraction
+
+tau_CH4:
+  distribution: Constant
+  value: 14.7
+  units: years
+
+tau_N2O:
+  distribution: Constant
+  value: 133.3
+  units: years
+
+tau_N2O_strat_delay:
+  distribution: Constant
+  value: 3
+  units: years
+
+lambda_lc_CH4:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+lambda_lc_N2O:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+lambda_lc_CH4stratH2O:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+lambda_lc_CH4tropO3:
+  distribution: Constant
+  value: 0.85
+  units: fraction
+
+#Emissions/RF multipliers for 100% SPK fuels
+SPK_H2O:
+  distribution: Constant
+  value: 1.11
+  units: fraction
+
+SPK_SOx:
+  distribution: Constant
+  value: 0
+  units: fraction
+
+SPK_AIC:
+  distribution: Constant
+  value: 1
+  units: fraction
+
+SPK_CO2:
+  distribution: Constant
+  value: 0.98
+  units: fraction
+  
+SPK_NOx:
+  distribution: Uniform
+  a: 0.9
+  b: 1
+  units: fraction
+
+SPK_Soot:
+  distribution: Uniform
+  a: 0.05
+  b: 0.4
+  units: fraction

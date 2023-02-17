@@ -1,0 +1,268 @@
+#ACAI uncertainty variables for advanced approach
+#Mid lens
+#Do not change units -- model is set up to work with units specified below
+
+#CLIMATE VARIABLES
+lambda_Contrail:
+  distribution: Triangular
+  min: 0.31
+  top: 0.417
+  max: 0.59
+  units: NA
+
+RF2xCO2:
+  distribution: Triangular
+  min: 3.46
+  top: 3.93
+  max: 4.40
+  units: W/m^2
+
+spec_heat:
+  distribution: Triangular
+  min: 252300000
+  top: 441000000
+  max: 630700000
+  units: J/K-m^2
+
+advect:
+  distribution: Triangular
+  min: 0.0000615
+  top: 0.000123
+  max: 0.000246
+  units: kg/m^2-s
+
+C2_in:
+  distribution: Triangular
+  min: 6300000000
+  top: 12600000000
+  max: 25200000000
+  units: J/K-m^2
+
+z_in: 
+  distribution: Triangular
+  min: 500
+  top: 1000
+  max: 2000
+  units: m
+
+diffuse:
+  distribution: Uniform
+  a: 4.00E-05
+  b: 1.00E-04
+  units: m^2/s
+
+RF_mod_unc:
+  distribution: Uniform
+  a: 0.9
+  b: 1.1
+  units: fraction
+
+mass_to_conc_model_unc:
+  distribution: Normal
+  mu: 0
+  sigma: 0.0625
+  lower_bound: -1
+  upper_bound: 1
+  units: fraction
+
+clim_sen:
+  distribution: RoeBaker
+  f_mu: 0.6182
+  f_sigma: 0.1848
+  RoeB_max: 10
+
+SARF_adjust:
+  distribution: Triangular
+  min: 0.0475
+  top: 0.05
+  max: .0525
+  units: percentage
+
+contrail_SATL_RF:
+  distribution: Normal
+  mu: 6.14e-13
+  sigma: 1.76e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_CPAC_RF:
+  distribution: Normal
+  mu: 7.59e-13
+  sigma: 2.51e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_CONUS_RF:
+  distribution: Normal
+  mu: 2.68e-12
+  sigma: 2.28e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_MEAST_RF:
+  distribution: Normal
+  mu: 2.48e-12
+  sigma: 4.67e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_NATL_RF:
+  distribution: Normal
+  mu: 2.91e-12
+  sigma: 3.46e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_NPAC_RF:
+  distribution: Normal
+  mu: 1.55e-12
+  sigma: 4.67e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_NAM_RF:
+  distribution: Normal
+  mu: 2.70e-12
+  sigma: 5.78e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_global_RF:
+  distribution: Normal
+  mu: 1.10e-12
+  sigma: 1.48e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_RUS_RF:
+  distribution: Normal
+  mu: 3.47e-12
+  sigma: 5.65e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_SEAS_RF:
+  distribution: Normal
+  mu: 1.44e-12
+  sigma: 2.28e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_WEU_RF:
+  distribution: Normal
+  mu: 4.63e-12
+  sigma: 4.09e-13
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: W/m2/km
+
+contrail_RF_unc:
+  distribution: Triangular
+  min: 0.3
+  top: 1.0
+  max: 1.7
+  units: fraction
+
+a19:
+  distribution: Constant
+  value: 0
+  units: GDP/DT 
+
+a29:
+  distribution: Normal
+  mu: 0.0074375
+  sigma: 0.002375
+  lower_bound: -Inf
+  upper_bound: Inf
+  units: GDP/DT^2
+
+a39:
+  distribution: Constant
+  value: 2
+  units: exponent
+
+
+#AIR QUALITY VARIABLES
+VSL_US_1990:
+  distribution: Weibull
+  shape: 1.51
+  scale: 5.32
+  units: million 1990-USD
+
+income_elasticity:
+  distribution: Triangular
+  min: 0
+  top: 0.7
+  max: 1.4
+  units: NA
+
+β_cardio: #Hoek et al (PM2.5)
+  distribution: Triangular
+  min: 3.29511e-3
+  top: 1.04360e-2
+  max: 1.61438e-2
+  units: NA
+
+β_resp: #Turner et al (O3)
+  distribution: Triangular
+  min: 7.6961e-3
+  top: 1.13329e-2
+  max: 1.4842e-2
+  units: NA
+
+β_AC: #Turner et al (O3)
+  distribution: Triangular
+  min: 9.95033e-4
+  top: 1.98026e-3
+  max: 3.92207e-3
+  units: NA
+
+θ_IHD: #Burnett et al
+  distribution: Normal
+  mu: 0.2969
+  sigma: 0.01787
+  lower_bound: 0
+  upper_bound: Inf
+  units: NA
+
+θ_stroke:
+  distribution: Normal
+  mu: 0.2720
+  sigma: 0.07697
+  lower_bound: 0
+  upper_bound: Inf
+  units: NA
+
+θ_COPD:
+  distribution: Normal
+  mu: 0.2510
+  sigma: 0.06762
+  lower_bound: 0
+  upper_bound: Inf
+  units: NA
+
+θ_LC:
+  distribution: Normal
+  mu: 0.2942
+  sigma: 0.06174
+  lower_bound: 0
+  upper_bound: Inf
+  units: NA
+
+θ_LRI:
+  distribution: Normal
+  mu: 0.4468
+  sigma: 0.11735
+  lower_bound: 0
+  upper_bound: Inf
+  units: NA
